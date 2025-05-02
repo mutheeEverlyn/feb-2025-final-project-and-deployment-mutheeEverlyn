@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <!-- File CSS -->
+        <link rel="stylesheet" href="CSS/style.css">
+    <title>JUNESALES</title>
+  </head>
+  <body>
+    <div class="auth">
+    <div class="auth-container">
+        <div class="auth-img">
+            <img src="./img/auth-image.png" alt="auth image">
+        </div>
+      <div class="auth-card">
+        <h2>Welcome Back ! </h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <span class="toggle-password" data-target="password">👁️</span>
+          </div>
+          <button type="submit" class="btn btn-primary"> Login</button>
+        </form>
+        <p class="auth-link">
+          Don't have an account? <a href="signup.html">Sign up</a>
+        </p>
+      </div>
+    </div>
+
+    <footer>
+        <div class="container">
+
+            <div class="big_row">
+                <a href="#" class="logo"> JUNESALES</a>
+
+                <p>Your trusted online shopping destination for quality products.</p>
+
+                <div class="icons_footer">
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Find It Fast</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Laptops & Computers </a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Smart Phones & Tablets</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> TV & Audio</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Appliances</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Jewelry & Watches</a>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <h4>Quick Links</h4>
+
+                <div class="links">
+                    <a href="./login.html"><i class="fa-solid fa-caret-right"></i> Your Account </a>
+                    <a href="./index.html"><i class="fa-solid fa-caret-right"></i> Home</a>
+                    <a href="./about.html"><i class="fa-solid fa-caret-right"></i> about</a>
+                    <a href="./blog.html"><i class="fa-solid fa-caret-right"></i> blog</a>
+                    <a href="./contact.html"><i class="fa-solid fa-caret-right"></i> Contact us</a>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <h4>Service us</h4>
+
+                <div class="links">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Support Center</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Help</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom_footer">
+                <p>&copy; <span>JUNESALES.</span> All Rights Reserved.</p>
+        </div>
+    </footer>
+</div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const loginForm = document.querySelector("#loginForm");
+    
+        loginForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+    
+          const email = document.querySelector("#email").value.trim();
+          const password = document.querySelector("#password").value.trim();
+    
+          // Example user validation
+          const users = JSON.parse(localStorage.getItem("users")) || [];
+          const foundUser = users.find(user => user.email === email && user.password === password);
+    
+          if (foundUser) {
+            // Store user info in localStorage
+            localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+    
+            // Show welcome toast
+            Toastify({
+              text: `Welcome back, ${foundUser.name || "user"}!`,
+              duration: 3000,
+              gravity: "top",
+              position: "center",
+              backgroundColor: "#4CAF50",
+            }).showToast();
+    
+            // Redirect or reload
+            setTimeout(() => {
+              window.location.href = "products.html";
+            }, 1500);
+          } else {
+            Toastify({
+              text: "Invalid email or password!",
+              duration: 3000,
+              gravity: "top",
+              position: "center",
+              backgroundColor: "#ff4d4d",
+            }).showToast();
+          }
+        });
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".toggle-password").forEach(toggle => {
+        toggle.addEventListener("click", () => {
+          const targetId = toggle.getAttribute("data-target");
+          const input = document.getElementById(targetId);
+    
+          if (input.type === "password") {
+            input.type = "text";
+            toggle.textContent = "🙈";
+          } else {
+            input.type = "password";
+            toggle.textContent = "👁️";
+          }
+        });
+      });
+    </script>
+    
+  </body>
+</html>
