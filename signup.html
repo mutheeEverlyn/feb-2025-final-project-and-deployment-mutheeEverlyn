@@ -11,6 +11,7 @@
 
          <!-- File CSS -->
          <link rel="stylesheet" href="CSS/style.css">
+         <link rel="icon" href="img/icon.png">
     <title>JUNESALES</title>
   </head>
   <body>
@@ -33,12 +34,12 @@
             <div class="form-group">
               <label for="password">Password</label>
               <input type="password" id="password" name="password" required>
-              <span class="toggle-password" data-target="password">🔒</span>
+              <span class="toggle-password" data-target="password">👁️</span>
             </div>
             <div class="form-group">
               <label for="confirmPassword">Confirm Password</label>
               <input type="password" id="confirmPassword" name="confirmPassword" required>
-              <span class="toggle-password" data-target="confirmPassword">🔒</span>
+              <span class="toggle-password" data-target="confirmPassword">👁️</span>
             </div>
             
               <button type="submit" class="btn btn-primary">
@@ -181,10 +182,10 @@
     
           if (input.type === "password") {
             input.type = "text";
-            toggle.textContent = "🔒";
+            toggle.textContent = "🙈";
           } else {
             input.type = "password";
-            toggle.textContent = "🔓";
+            toggle.textContent = "👁️";
           }
         });
       });

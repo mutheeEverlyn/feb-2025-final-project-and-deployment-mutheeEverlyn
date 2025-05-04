@@ -19,7 +19,7 @@
             <img src="./img/auth-image.png" alt="auth image">
         </div>
       <div class="auth-card">
-        <h2>Welcome Back ! </h2>
+        <h2>Welcome Back To JUNESALES! </h2>
         <form id="loginForm">
           <div class="form-group">
             <label for="email">Email</label>
@@ -33,7 +33,9 @@
           <button type="submit" class="btn btn-primary"> Login</button>
         </form>
         <p class="auth-link">
-          Don't have an account? <a href="signup.html">Sign up</a>
+          <span>
+          Don't have an account? <a href="signup.html" class="form_auth_link">Sign up</a>
+        </span>
         </p>
       </div>
     </div>
@@ -142,8 +144,6 @@
           }
         });
       });
-    </script>
-    <script>
       document.querySelectorAll(".toggle-password").forEach(toggle => {
         toggle.addEventListener("click", () => {
           const targetId = toggle.getAttribute("data-target");

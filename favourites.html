@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Favourite Products </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="CSS/style.css"/>
+</head>
+<body>
+  <div class="cart">
+    <div class="top_cart">
+        <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+        <span onclick="open_close_cart()" class="close_cart"><i class="fa-regular fa-circle-xmark"></i></span>
+    </div>
+    <div class="items_in_cart" id="cart_items">
+    </div>
+   <div class="bottom_cart">
+        <div class="total">
+            <p>subtotal</p>
+            <p class="price_cart_total">$0</p>
+        </div>
+
+        <div class="button_cart">
+            <a href="#" class="btn_cart btn">Checkout</a>
+            <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
+        </div>
+    </div>
+
+</div>
+  <header>
+    <div class="top_header">
+        <div class="container">
+            <a href="#" class="logo">JUNESALES</a>
+
+            <form action="" class="search_box">
+                <div class="select_box">
+                    <select id="category" name="category">
+                        <option value="All Categories" data-category="">All Categories</option>
+                        <option value="Electronics" data-category="Electronics">Electronics</option>
+                        <option value="Phones & Tablets" data-category="Phones & Tablets">Phones & Tablets</option>
+                        <option value="Fashion & Clothings" data-category="Fashion & Clothings">Fashion & Clothings</option>
+                        <option value="Appliances" data-category="Appliances">Appliances</option>
+                        <option value="Jewelry & Watches" data-category="Jewelry & Watches">Jewelry & Watches</option>
+                        <option value="Toys" data-category="Toys">Toys </option>
+                    </select>
+                </div>
+                <input type="text" name="search_input" id="search" placeholder="Search for Products" required>
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <div class="header_icons">
+                <div class="icon">
+                    <a href="./favourites.html">
+                        <i class="fa-regular fa-heart"></i>
+                        <span class="count count_favourite">0</span>
+                    </a>
+                </div>
+                <div onclick="open_close_cart()" class="icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="count count_item_header">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom_header">
+        <div class="container">
+            <nav class="nav">
+                <span onclick="open_Menu()" class="open_menu"><i class="fa-solid fa-bars"></i></span>
+                <ul class="nav_links">
+                    <span onclick="close_Menu()" class="close_menu"><i class="fa-regular fa-circle-xmark"></i></span>
+                    <li class="active"><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./products.html">Products</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+  <section class="products_section container">
+    <h2>My Favourite Products</h2>
+    <div class="products_grid" id="favourites-list">
+      <!-- Favourites will appear here -->
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+
+        <div class="big_row">
+            <a href="#" class="logo"> JUNESALES</a>
+
+            <p>Your trusted online shopping destination for quality products.</p>
+
+            <div class="icons_footer">
+                <a href="#"><i class="fa-solid fa-phone"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <h4>Find It Fast</h4>
+
+            <div class="links">
+                <a href="#"><i class="fa-solid fa-caret-right"></i> Laptops & Computers </a>
+                <a href="#"><i class="fa-solid fa-caret-right"></i> Smart Phones & Tablets</a>
+                <a href="#"><i class="fa-solid fa-caret-right"></i> TV & Audio</a>
+                <a href="#"><i class="fa-solid fa-caret-right"></i> Appliances</a>
+                <a href="#"><i class="fa-solid fa-caret-right"></i> Jewelry & Watches</a>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <h4>Quick Links</h4>
+
+            <div class="links">
+                <a href="./login.html"><i class="fa-solid fa-caret-right"></i> Your Account </a>
+                <a href="./index.html"><i class="fa-solid fa-caret-right"></i> Home</a>
+                <a href="./about.html"><i class="fa-solid fa-caret-right"></i> about</a>
+                <a href="./blog.html"><i class="fa-solid fa-caret-right"></i> blog</a>
+                <a href="./contact.html"><i class="fa-solid fa-caret-right"></i> Contact us</a>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <h4>Service us</h4>
+
+            <div class="links">
+                <a href="#"><i class="fa-solid fa-caret-right"></i> Support Center</a>
+                <a href="#"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
+                <a href="#"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
+                <a href="#"><i class="fa-solid fa-caret-right"></i> Help</a>
+                <a href="#"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom_footer">
+            <p>&copy; <span>JUNESALES.</span> All Rights Reserved.</p>
+    </div>
+</footer>
+
+  <script src="main.js"></script>
+
+  <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Global counter updates
+function updateFavouritesCount() {
+  const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+  const count = favourites.length;
+  document.querySelectorAll(".count_favourite").forEach(el => {
+    if (el) el.textContent = count;
+  });
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  document.querySelectorAll(".count_item_header, .Count_item_cart").forEach(el => {
+    if (el) el.textContent = count;
+  });
+}
+
+  if (!window.Toastify) {
+    // Add Toastify CSS
+    const toastifyCSS = document.createElement('link');
+    toastifyCSS.rel = 'stylesheet';
+    toastifyCSS.href = 'https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css';
+    document.head.appendChild(toastifyCSS);
+    
+    // Add Toastify JS
+    const toastifyScript = document.createElement('script');
+    toastifyScript.src = 'https://cdn.jsdelivr.net/npm/toastify-js';
+    document.body.appendChild(toastifyScript);
+    
+    // Wait for Toastify to load
+    toastifyScript.onload = function() {
+      initializeFavorites();
+    };
+  } else {
+    initializeFavorites();
+  }
+  
+  function showToast(message, type) {
+    if (!window.Toastify) {
+      console.log(message); // Fallback if Toastify isn't loaded yet
+      return;
+    }
+    
+    Toastify({
+      text: message,
+      duration: 3000,
+      gravity: "bottom",
+      position: "right",
+      backgroundColor: type === "success" ? "#4CAF50" : 
+                      type === "error" ? "#f44336" : 
+                      type === "info" ? "#2196F3" : "#333",
+      stopOnFocus: true,
+      className: "toastify-custom",
+    }).showToast();
+  }
+  
+  function initializeFavorites() {
+    // Get elements and data
+    const favouritesList = document.getElementById('favourites-list');
+    let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+    
+    // Add some global styles for buttons and cards
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .actions-container {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .btn-action {
+        flex: 1;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        transition: background-color 0.2s, transform 0.1s;
+      }
+      .btn-cart {
+        background-color: #4CAF50;
+        color: white;
+      }
+      .btn-cart:hover {
+        background-color: #45a049;
+      }
+      .btn-remove {
+        background-color: #f44336;
+        color: white;
+      }
+      .btn-remove:hover {
+        background-color: #d32f2f;
+      }
+      .product-card {
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .toastify-custom {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        border-radius: 4px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Render favorites
+    function renderFavorites() {
+      if (favourites.length === 0) {
+        favouritesList.innerHTML = "<p>You haven't added any favourites yet.</p>";
+        return;
+      }
+      
+      favouritesList.innerHTML = "";
+      favourites.forEach((product, index) => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML = `
+          <img src="${product.img || product.image || 'img/placeholder.png'}" alt="${product.name || 'Product'}">
+          <h3>${product.name || 'Unnamed Product'}</h3>
+          <p>Category: ${product.category || product.catetory || 'Uncategorized'}</p>
+          <div class="price-container">
+            <span class="price">$${product.price || '0'}</span>
+            ${product.old_price ? `<span class="old_price">$${product.old_price}</span>` : ""}
+          </div>
+          <div class="actions-container">
+            <button class="btn-action btn-cart add-to-cart-btn" data-index="${index}">
+              <i class="fa-solid fa-cart-shopping"></i> Add to cart
+            </button>
+            <button class="btn-action btn-remove remove-fav-btn" data-index="${index}">
+              <i class="fa-solid fa-trash"></i> Remove
+            </button>
+          </div>
+        `;
+        favouritesList.appendChild(productCard);
+        
+        // Add direct event listeners to these specific buttons
+        const addBtn = productCard.querySelector('.add-to-cart-btn');
+        addBtn.onclick = function() {
+          updateCartCount();
+        };
+        
+        // Remove favorite button
+        const removeBtn = productCard.querySelector('.remove-fav-btn');
+        removeBtn.onclick = function() {
+          const idx = this.getAttribute('data-index');
+          const productName = favourites[idx].name;
+          
+          // Visual feedback before removal
+          this.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Removing...';
+          
+          setTimeout(() => {
+            favourites.splice(idx, 1);
+            localStorage.setItem('favourites', JSON.stringify(favourites));
+            
+            showToast(`${productName} removed from favorites`, "info");
+            
+            renderFavorites();
+            
+            // Update favorites count
+            const count = favourites.length;
+            document.querySelectorAll(".count_favourite").forEach(el => {
+              if (el) el.textContent = count;
+            });
+          }, 300); // Short delay for better UX
+        };
+      });
+    }
+    
+    // Initial render
+    renderFavorites();
+
+    // Initialize counters
+    updateFavouritesCount();
+    updateCartCount();
+  }
+});
+  </script>
+</body>
+</html>
