@@ -13,6 +13,22 @@
     <title>JUNESALES</title>
   </head>
   <body>
+    <header>
+      <div class="container">
+          <a href="#" class="logo"> JUNESALES</a>
+          <span onclick="open_Menu()" class="open_menu"><i class="fa-solid fa-bars"></i></span> 
+          <nav class="top-nav">
+              <span onclick="close_Menu()" class="close_menu"><i class="fa-regular fa-circle-xmark"></i></span>
+              <ul class="nav_links">
+                  <li class="active"><a href="./index.html">Home</a></li>
+                  <li><a href="./about.html">About</a></li>
+                  <li><a href="./services.html">Services</a></li>
+                  <li><a href="./blog.html">Blog</a></li>
+                  <li><a href="./contact.html">Contact</a></li>
+              </ul>
+          </nav>
+      </div>
+</header>
     <div class="auth">
     <div class="auth-container">
         <div class="auth-img">
@@ -102,6 +118,7 @@
 </div>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./JS/main.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const loginForm = document.querySelector("#loginForm");
